@@ -56,55 +56,55 @@ const Navbar = () => {
   };
 
   // Check the network (you can customize this to handle different networks)
-  const checkNetwork = async () => {
-    if (window.ethereum) {
-      try {
-        const network = await window.ethereum.request({ method: 'eth_chainId' });
-        switch (network) {
-          case '0x1': // Ethereum Mainnet
-            console.log("Connected to Ethereum Mainnet");
-            break;
-          case '0x3': // Ropsten Testnet
-            console.log("Connected to Ropsten Testnet");
-            break;
-          case '0x4': // Rinkeby Testnet
-            console.log("Connected to Rinkeby Testnet");
-            break;
-          case '0x5': // Goerli Testnet
-            console.log("Connected to Goerli Testnet");
-            break;
-          case '0x2a': // Kovan Testnet
-            console.log("Connected to Kovan Testnet");
-            break;
-          case '0x38': // Binance Smart Chain Mainnet
-            console.log("Connected to Binance Smart Chain Mainnet");
-            break;
-          case '0x61': // Binance Smart Chain Testnet
-            console.log("Connected to Binance Smart Chain Testnet");
-            break;
-          case '0x89': // Polygon Mainnet
-            console.log("Connected to Polygon Mainnet");
-            break;
-          case '0x13881': // Polygon Mumbai Testnet
-            console.log("Connected to Polygon Mumbai Testnet");
-            break;
-          case '0xa86a': // Avalanche Mainnet
-            console.log("Connected to Avalanche Mainnet");
-            break;
-          case '0xa869': // Avalanche Fuji Testnet
-            console.log("Connected to Avalanche Fuji Testnet");
-            break;
-          default:
-            console.log("Unknown network:", network);
-            break;
-        }
-      } catch (error) {
-        console.error("Error checking network:", error);
-      }
-    } else {
-      console.error("Ethereum provider not found");
-    }
-  };
+  // const checkNetwork = async () => {
+  //   if (window.ethereum) {
+  //     try {
+  //       const network = await window.ethereum.request({ method: 'eth_chainId' });
+  //       switch (network) {
+  //         case '0x1': // Ethereum Mainnet
+  //           console.log("Connected to Ethereum Mainnet");
+  //           break;
+  //         case '0x3': // Ropsten Testnet
+  //           console.log("Connected to Ropsten Testnet");
+  //           break;
+  //         case '0x4': // Rinkeby Testnet
+  //           console.log("Connected to Rinkeby Testnet");
+  //           break;
+  //         case '0x5': // Goerli Testnet
+  //           console.log("Connected to Goerli Testnet");
+  //           break;
+  //         case '0x2a': // Kovan Testnet
+  //           console.log("Connected to Kovan Testnet");
+  //           break;
+  //         case '0x38': // Binance Smart Chain Mainnet
+  //           console.log("Connected to Binance Smart Chain Mainnet");
+  //           break;
+  //         case '0x61': // Binance Smart Chain Testnet
+  //           console.log("Connected to Binance Smart Chain Testnet");
+  //           break;
+  //         case '0x89': // Polygon Mainnet
+  //           console.log("Connected to Polygon Mainnet");
+  //           break;
+  //         case '0x13881': // Polygon Mumbai Testnet
+  //           console.log("Connected to Polygon Mumbai Testnet");
+  //           break;
+  //         case '0xa86a': // Avalanche Mainnet
+  //           console.log("Connected to Avalanche Mainnet");
+  //           break;
+  //         case '0xa869': // Avalanche Fuji Testnet
+  //           console.log("Connected to Avalanche Fuji Testnet");
+  //           break;
+  //         default:
+  //           console.log("Unknown network:", network);
+  //           break;
+  //       }
+  //     } catch (error) {
+  //       console.error("Error checking network:", error);
+  //     }
+  //   } else {
+  //     console.error("Ethereum provider not found");
+  //   }
+  // };
   
 
   return (

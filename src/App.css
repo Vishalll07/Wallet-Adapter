@@ -4,6 +4,7 @@
   padding: 2rem;
   text-align: center;
   padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .logo {
@@ -43,3 +44,4 @@
 .read-the-docs {
   color: #888;
 }
+

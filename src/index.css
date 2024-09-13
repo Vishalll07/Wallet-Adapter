@@ -178,3 +178,35 @@ nav button:hover {
 .wallet-icon {
   margin-left: 0.5rem;
 }
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding: 15px 0; /* Reduced vertical padding */
+  background-color: rgba(26, 26, 26, 0.7); /* Semi-transparent dark background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem; /* Slightly reduced font size */
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this new style for the content wrapper */
+.footer-content {
+  max-width: 80%; /* Adjust as needed */
+  margin: 0 auto;
+}
