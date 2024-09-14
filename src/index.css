@@ -28,7 +28,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 1);
+ background-image: radial-gradient(circle, rgba(57, 255, 20, 0.2) 0%, rgba(57, 255, 20, 0.1) 50%, rgba(0, 0, 0, 1) 100%);
+
 }
 
 h1 {
@@ -74,7 +76,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: transparent;
+  background-color: rgb(26,26,26,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
@@ -131,7 +135,7 @@ nav button:hover {
 }
 
 .highlight {
-  background: linear-gradient(to right, #00ffff, #00ff00);
+  background: linear-gradient(to right, #a6ff00, #e900f9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -200,13 +204,120 @@ nav button:hover {
 
 .footer p {
   margin: 0;
-  font-size: 0.9rem; /* Slightly reduced font size */
+  font-size: 0.9rem; 
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Add this new style for the content wrapper */
 .footer-content {
-  max-width: 80%; /* Adjust as needed */
+  max-width: 80%; 
   margin: 0 auto;
+}
+
+/* Key Generator styles */
+.key-generator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 10rem); /* Adjust for top and bottom padding */
+  padding: 20px;
+}
+
+.key-generator {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.key-generator h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #39ff14;
+  border-radius: 50%;
+  margin-right: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked {
+  background-color: #39ff14;
+  box-shadow: 0 0 5px #39ff14;
+}
+
+.input-field {
+  width: calc(100% - 8px); /* Adjusted to account for 4px space on each side */
+  padding: 0.75rem 1rem;
+  background-color: #2a2a2a;
+  border: 1px solid #39ff14;
+  border-radius: 25px;
+  color: white;
+  display: block;
+  margin: 10px auto; 
+  max-width: calc(80% - 8px); /* Adjusted to account for 4px space on each side */
+}
+
+.generate-button {
+  background-color: #39ff14;
+  color: black;
+  border: none;
+  border-radius: 4px;
+ 
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.key-display {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.key-label {
+  font-weight: bold;
+  color: #39ff14;
+  margin-bottom: 0.5rem;
+}
+
+.key-value {
+  background-color: #2a2a2a;
+  padding: 0.75rem;
+  border-radius: 4px;
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Add a new class for the keys container */
+.keys-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
