@@ -1,14 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as bip39 from 'bip39';
-
+import { Buffer } from 'buffer';
 const GenerateMnemonics = () => {
   const [mnemonic, setMnemonic] = useState('');
 
+  useEffect(() => {
+    // Add Buffer polyfill buffer is used to parse binary data manupulation data into a string
+    if (typeof window !== 'undefined' && !window.Buffer) {
+      if (typeof require !== 'undefined') {
+        window.Buffer = Buffer;
+      }
+    }
+  }, []);
+
   // Function to generate a new mnemonic phrase
   const generateMnemonic = () => {
-    const newMnemonic = bip39.generateMnemonic();
-    console.log(newMnemonic);  
-    setMnemonic(newMnemonic);
+    try {
+      const newMnemonic = bip39.generateMnemonic();
+      console.log(newMnemonic);  
+      setMnemonic(newMnemonic);
+    } catch (error) {
+      console.error('Error generating mnemonic:', error);
+    }
   };
 
   return (
