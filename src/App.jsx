@@ -2,7 +2,7 @@ import './App.css'
 import Navbar from './components/Navbar'; // Add this import at the top of the file
 import { TypeWriter } from './components/TypeWriter';
 import Footer from './components/Footer';
-import KeyGenerator from './components/Keygenerator';
+import KeyGenerator from './components/KeyGenerator';
 import GenerateMnemonics from './components/GenerateMnemonics';
 function App() {
   
