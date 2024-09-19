@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'; // Add this import at the top of the f
 import { TypeWriter } from './components/TypeWriter';
 import Footer from './components/Footer';
 import KeyGenerator from './components/Keygenerator';
+import GenerateMnemonics from './components/GenerateMnemonics';
 function App() {
   
 
@@ -18,6 +19,7 @@ function App() {
         </div>
       </div>
       <KeyGenerator />
+      <GenerateMnemonics />
       <Footer />
     </div>
   )
