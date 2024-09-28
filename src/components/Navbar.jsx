@@ -117,8 +117,8 @@ const Navbar = () => {
 
         {/* Right side: GitHub, Twitter, and Connect Wallet buttons */}
         <div>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px' }}>Twitter</a>
+          <a href="https://github.com/Vishalll07/Wallet-Adapter" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://x.com/Unowmeno_7" target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px' }}>Twitter</a>
           {selectedWallet ? (
             <button onClick={disconnectWallet}>
               Disconnect: {selectedWallet.slice(0, 6)}...{selectedWallet.slice(-4)}

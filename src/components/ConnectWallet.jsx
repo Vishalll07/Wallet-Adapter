@@ -26,8 +26,10 @@ export const ConnectWallet = () => {
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
-                    <WalletMultiButton />
-                    <WalletDisconnectButton />
+                    <div style={{ display: 'flex', gap: '35px' }}>
+                        <WalletMultiButton className="wallet-adapter-button-trigger" />
+                        <WalletDisconnectButton />
+                    </div>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
