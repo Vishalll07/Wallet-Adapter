@@ -29,7 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 1);
- background-image: radial-gradient(circle, rgba(57, 255, 20, 0.2) 0%, rgba(57, 255, 20, 0.1) 50%, rgba(0, 0, 0, 1) 100%);
+ background-image: radial-gradient(circle, rgba(104, 75, 171, 0.3) 0%, rgba(104, 75, 171, 0.2) 50%, rgba(0, 0, 0, 1) 100%);
 
 }
 
@@ -226,7 +226,9 @@ nav button:hover {
 }
 
 .key-generator {
-  background-color: #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.053); /* Semi-transparent light background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
@@ -323,14 +325,102 @@ nav button:hover {
   gap: 10px;
 }
 
+
+
 /* Mnemonic Generator styles */
 .mnemonic-generator-container {
-  background-color: #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.053); /* Updated background color */
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 600px; /* Maximum width for larger screens */
+  margin: 20px auto; /* Center the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+  }
+
+  nav {
+    flex-direction: column; /* Stack nav items vertically */
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  .home-content {
+    height: auto; /* Allow height to adjust */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .main-title {
+    font-size: 2.5em; /* Smaller font size */
+    margin-bottom: 1rem; /* Reduce margin */
+  }
+
+  .highlight {
+    font-size: 1.5em; /* Adjust highlight font size */
+  }
+
+  .input-container {
+    max-width: 90%; /* Allow more width on smaller screens */
+  }
+
+  .secret-input,
+  .input-field {
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Reduce padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .create-wallet-btn,
+  .generate-button,
+  .generate-mnemonic-button,
+  .copy-mnemonic-button {
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Reduce padding */
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .footer {
+    padding: 10px 0; /* Reduce padding */
+  }
+
+  .footer-content {
+    max-width: 90%; /* Allow more width on smaller screens */
+  }
+
+  .key-generator-container,
+  .mnemonic-generator-container {
+    padding: 1rem; /* Reduce padding */
+    margin: 10px; /* Adjust margin */
+  }
+
+  .key-generator h2,
+  .mnemonic-generator-container h2 {
+    font-size: 1.5em; /* Smaller font size */
+  }
+
+  .radio-group {
+    flex-direction: column; /* Stack radio buttons vertically */
+    align-items: flex-start; /* Align to the start */
+  }
+
+  .radio-label {
+    margin: 5px 0; /* Adjust margin */
+  }
+
+  .keys-container {
+    gap: 5px; /* Reduce gap */
+  }
+
+  .mnemonic-generator-container {
+    padding: 1rem; /* Reduce padding on smaller screens */
+    margin: 10px auto; /* Center the container */
+    width: calc(100% - 20px); /* Full width minus some margin */
+  }
 }
 
 .mnemonic-generator-container h2 {
@@ -392,4 +482,18 @@ nav button:hover {
 .copy-mnemonic-button:hover {
   background-color: #39ff14;
   color: #1a1a1a;
+}
+
+/* Add this new style for the WalletMultiButton */
+.wallet-adapter-button-trigger {
+   /* Blue color */
+  color: rgb(255, 255, 255); /* Text color */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Match existing button styles */
+  padding: 0.6em 1.2em; /* Match existing button padding */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.wallet-adapter-button-trigger:hover {
+  background-color: #dfe1e8; /* Green on hover */
 }
