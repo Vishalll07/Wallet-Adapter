@@ -1,5 +1,5 @@
-import  { useMemo } from 'react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { useMemo, useContext } from 'react';
+import { ConnectionProvider, WalletProvider, WalletContext } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 import {
@@ -34,6 +34,12 @@ export const ConnectWallet = () => {
             </WalletProvider>
         </ConnectionProvider>
     );
+};
+
+// Function to check if the wallet is connected
+export const useWalletConnection = () => {
+    const { connected } = useContext(WalletContext);
+    return connected;
 };
 
 export default ConnectWallet;

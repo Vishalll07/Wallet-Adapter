@@ -4,7 +4,8 @@ import { TypeWriter } from './components/TypeWriter';
 import Footer from './components/Footer';
 import KeyGenerator from './components/KeyGenerator';
 import GenerateMnemonics from './components/GenerateMnemonics';
-import ConnectWallet from './components/ConnectWallet'; 
+import ConnectWallet from './components/ConnectWallet';
+import FunctionNavbar from './components/FunctionNavbar'; 
 
 function App() {
 
@@ -19,6 +20,9 @@ function App() {
           <ConnectWallet />
         </div>
       </div>
+      <div className="mt-11 function-navbar-container">
+        <FunctionNavbar />
+      </div> 
       <KeyGenerator />
       <GenerateMnemonics />
       <Footer />

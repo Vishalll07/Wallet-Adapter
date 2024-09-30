@@ -8,7 +8,7 @@ export const TypeWriter = () => {
     const [wordIndex, setWordIndex] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
   
-    const words = ['Wallets', 'Crypto', 'WEB3', 'Payments', 'Hashing','NFTs','Transactions'];
+    const words = ['Wallets', 'Crypto', 'WEB3', 'Payments', 'Hashing','NFTs'];
   
     useEffect(() => {
       const handleTyping = () => {
