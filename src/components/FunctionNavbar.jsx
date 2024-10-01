@@ -1,21 +1,28 @@
-import { useState } from 'react'; // Import useState
-import { useWalletConnection } from './ConnectWallet'; // Import the function
-
+import { useState } from 'react';
+import { useWalletConnection } from './ConnectWallet'; 
+import { Toaster, toast } from 'sonner'; 
 
 const FunctionNavbar = () => {
     const isConnected = useWalletConnection(); 
     const [activeButton, setActiveButton] = useState(null); 
-    const [showMessage, setShowMessage] = useState(false); 
 
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName); 
+
         if (!isConnected) {
-            setShowMessage(true); 
+            toast.error('Wallet has not been connected'); 
+        } else if(isConnected) {
+            toast.success('Airdrop Successful');
+            console.log(`${buttonName} clicked`);
+        }else{
+            toast.error('Something went wrong');
         }
     };
 
     return (
         <div className="function-navbar">
+            <Toaster position="top-right" richColors /> 
+            
             <div className="button-container">
                 {['AirDrop', 'Send sol', 'Check sol', 'Sign a Message', 'Create Token'].map((buttonName) => (
                     <button
@@ -27,11 +34,6 @@ const FunctionNavbar = () => {
                     </button>
                 ))}
             </div>
-            {showMessage && !isConnected && ( 
-                <div className="wallet-connection-message">
-                    Please Connect your Wallet first
-                </div>
-            )}
         </div>
     );
 }
