@@ -1,30 +1,16 @@
-import { useMemo, useContext } from 'react';
-import { ConnectionProvider, WalletProvider, WalletContext } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
     WalletModalProvider,
     WalletDisconnectButton,
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
-
-// Import Solana wallet styles
 import '@solana/wallet-adapter-react-ui/styles.css';
 
 export const ConnectWallet = () => {
-    const network = WalletAdapterNetwork.Devnet;
-
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-
-    const wallets = useMemo(
-        () => [new UnsafeBurnerWalletAdapter()],
-        [network]
-    );
-
     return (
-        <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={wallets} autoConnect>
+        <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/Rqk6eHurjXGevgzm-F37dGX-ktmJoo0B"}>
+            <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                     <div style={{ display: 'flex', gap: '35px' }}>
                         <WalletMultiButton className="wallet-adapter-button-trigger" />
@@ -37,8 +23,9 @@ export const ConnectWallet = () => {
 };
 
 // Function to check if the wallet is connected
+
 export const useWalletConnection = () => {
-    const { connected } = useContext(WalletContext);
+    const { connected } = useWallet();
     return connected;
 };
 

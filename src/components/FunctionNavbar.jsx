@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { useWalletConnection } from './ConnectWallet'; 
 import { Toaster, toast } from 'sonner'; 
+import { useWallet } from '@solana/wallet-adapter-react';
 
 const FunctionNavbar = () => {
-    const isConnected = useWalletConnection(); 
+    const isConnected = useWallet(); 
     const [activeButton, setActiveButton] = useState(null); 
+     // State to control airdrop modal
 
-    const handleButtonClick = (buttonName) => {
+     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName); 
 
         if (!isConnected) {
@@ -19,12 +20,14 @@ const FunctionNavbar = () => {
         }
     };
 
+  
+
     return (
         <div className="function-navbar">
             <Toaster position="top-right" richColors /> 
             
             <div className="button-container">
-                {['AirDrop', 'Send sol', 'Check sol', 'Sign a Message', 'Create Token'].map((buttonName) => (
+                {['Send sol', 'Check sol', 'Sign a Message', 'Create Token'].map((buttonName) => (
                     <button
                         key={buttonName}
                         className={activeButton === buttonName ? 'active' : ''}
@@ -34,6 +37,8 @@ const FunctionNavbar = () => {
                     </button>
                 ))}
             </div>
+
+           
         </div>
     );
 }

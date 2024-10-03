@@ -6,7 +6,7 @@ import KeyGenerator from './components/KeyGenerator';
 import GenerateMnemonics from './components/GenerateMnemonics';
 import ConnectWallet from './components/ConnectWallet';
 import FunctionNavbar from './components/FunctionNavbar'; 
-
+import RequestAirdrop from './components/RequestAirdrop';
 function App() {
 
   return (
@@ -20,11 +20,14 @@ function App() {
           <ConnectWallet />
         </div>
       </div>
+      <RequestAirdrop />
       <div className="mt-11 function-navbar-container">
         <FunctionNavbar />
       </div> 
+      
       <KeyGenerator />
       <GenerateMnemonics />
+      
       <Footer />
     </div>
   );

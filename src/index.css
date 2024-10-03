@@ -500,7 +500,7 @@ nav button:hover {
 
 /* Navbar styles */
 .function-navbar {
-  background-color: #000;
+  background-color: #2b2a2a87;
   padding: 8px 0px; 
   border-radius: 6px;
   margin: 10px auto; 
@@ -534,7 +534,7 @@ nav button:hover {
 
 /* Button active state styles */
 .function-navbar button.active {
-    background-color: #39ff14; 
+    background-color: #0f0695; 
     color: #fff; 
     border: 1px solid #39ff14; 
 }
@@ -561,4 +561,20 @@ nav button:hover {
     flex-direction: column; 
     gap: 10px; 
   }
+}
+
+/* Add styles for the airdrop button container and button */
+.airdrop-button-container {
+       background-color:#3c444c54;
+    border-color: green;
+    border-radius: 20px; /* Adjusted border radius for a slightly smaller look */
+    padding: 3px; /* Adjusted padding for a slightly smaller look */
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjusted margin-top for a slightly smaller look */
+}
+
+.airdrop-button {
+    color: green;
+    border: 1px solid green;
+    border-radius: 10px;
 }

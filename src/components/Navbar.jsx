@@ -119,6 +119,9 @@ const Navbar = () => {
         <div>
           <a href="https://github.com/Vishalll07/Wallet-Adapter" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://x.com/Unowmeno_7" target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px' }}>Twitter</a>
+          
+          <button > Airdrop </button>
+          
           {selectedWallet ? (
             <button onClick={disconnectWallet}>
               Disconnect: {selectedWallet.slice(0, 6)}...{selectedWallet.slice(-4)}
@@ -126,6 +129,7 @@ const Navbar = () => {
           ) : (
             <button onClick={connectWallet}>Connect Wallet</button>
           )}
+          
         </div>
         
         {/* If multiple wallets detected, display selection options */}
