@@ -13,8 +13,9 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: '#C8ACD6', 
+  border: '1px solid #17153B', 
+  borderRadius: '20px',
   boxShadow: 24,
   p: 4,
 };
@@ -40,25 +41,76 @@ export default function AirdropModal() {
     <div>
       {/* Button to open the modal */}
       <div className="airdrop-button-container"> {/* Added class name for styling */}
-        <Button className="airdrop-button" onClick={handleOpen}> AIR DROP </Button> {/* Added class name for styling */}
+        <Button 
+          className="airdrop-button" 
+          onClick={handleOpen}
+          style={{
+            backgroundColor: '#624E88', 
+            color: 'white', 
+            padding: '10px 20px', 
+            borderRadius: '8px'
+          }}
+        > 
+          AIR DROP 
+        </Button>
       </div>
 
       {/* Modal component */}
       <Modal
         open={open}
         onClose={handleClose}
-        >
+      >
         <Box sx={style}>
-          <h1 style={{ color: 'black' }}>Add Amount</h1>
-          <h3 style={{ color: 'black'}}>Amount should less than2</h3>
+          <h2 style={{ color: '#17153B', textAlign: 'center' }}>Request AIRDROP</h2>
+          <p style={{ color: '#17153B', textAlign: 'center' }}>This tool does <strong>NOT</strong> give real $SOL or Solana tokens.</p>
           {/* Airdrop request form */}
-          
-          <input id="Wallet Address" type="text" placeholder="Wallet address" />
-          <br></br>
-          <input id="amount" type="text" placeholder="Amount in SOL" />
-          <Button onClick={requestAirdrop} style={{ backgroundColor: 'green', color: 'white', padding: '10px 10px'  }}>
-                Request Airdrop
-        </Button>
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ display: 'block', color: '#17153B', marginBottom: '8px' }}>Wallet Address</label>
+            <input 
+              id="wallet-address" 
+              type="text" 
+              placeholder="Enter wallet address" 
+              style={{
+                width: '95%',
+                padding: '8px',
+                borderRadius: '8px',
+                border: '1px solid #17153B'
+              }} 
+            />
+          </div>
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ display: 'block', color: '#17153B', marginBottom: '8px' }}>SOL Amount</label>
+            <select 
+              id="amount" 
+              style={{
+                width: '100%',
+                padding: '8px',
+                borderRadius: '8px',
+                border: '1px solid #17153B'
+              }}
+            >
+              <option value="0.1">0.1 SOL</option>
+              <option value="0.5">0.5 SOL</option>
+              <option value="1">1 SOL</option>
+              <option value="1.5">1.5 SOL</option>
+              <option value="2">2 SOL</option>
+              <option value="2.5">2.5 SOL</option>
+              <option value="3">3 SOL</option>
+              <option value="3.5">3.5 SOL</option>
+            </select>
+          </div>
+          <Button 
+            onClick={requestAirdrop} 
+            style={{ 
+              backgroundColor: '#17153B', 
+              color: 'white', 
+              width: '100%', 
+              padding: '10px', 
+              borderRadius: '8px'
+            }}
+          >
+            Request Airdrop
+          </Button>
         </Box>
       </Modal>
     </div>
